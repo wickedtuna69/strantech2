@@ -1,0 +1,31 @@
+/* STRANTECH shared design layer: loads after each page's inline CSS and overrides it */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100,600..800&family=Public+Sans:wght@400;500;600&display=swap');
+:root{--ink:#0b1b33;--blue:#3a55a4;--blue-bright:#2f4690;--cyan:#3a55a4;--signal:#f26a1b;--signal-d:#d95a10;--bg:#fff;--bg-alt:#f3f5f9;--card:#fff;--text:#14213a;--muted:#55627a;--border:#dde3ee;--header-bg:rgba(255,255,255,.96);--navy:#0b1b33}
+[data-theme=dark]{--bg:#08111f;--bg-alt:#0d1a2e;--card:#122038;--text:#eef2f9;--muted:#9fb0c9;--border:#22344f;--header-bg:rgba(8,17,31,.95);--blue:#8ea5f0;--cyan:#8ea5f0}
+body{font-family:'Public Sans',system-ui,sans-serif;background:var(--bg);color:var(--text)}
+h1,h2,h3,h4,.logo-text,.btn{font-family:'Archivo',sans-serif}
+h2{font-weight:750;letter-spacing:-.015em}
+header{background:var(--header-bg);box-shadow:none}
+nav a.active{color:var(--text);box-shadow:inset 0 -2px var(--signal)}
+.btn{border-radius:6px;font-weight:700;padding:.7rem 1.3rem;transition:background .2s,transform .2s}
+.btn-primary{background:var(--signal);color:#fff}
+.btn-primary:hover{background:var(--signal-d);box-shadow:none;transform:translateY(-1px)}
+.btn-lg{padding:.95rem 1.7rem;font-size:1rem}
+.btn-outline{border:1.5px solid currentColor;background:transparent}
+:focus-visible{outline:3px solid var(--signal);outline-offset:2px}
+.accent-line,.accent-line-center{background:var(--signal);height:3px}
+.section-label{text-transform:none;letter-spacing:0;font-size:.9rem;color:var(--blue)}
+.card,.lead-card,.value-card,.partner-item,.contract-card{border-radius:8px;border-color:var(--border);box-shadow:none}
+.card:hover,.lead-card:hover{transform:none;box-shadow:none;border-color:var(--blue)}
+/* CTA band added to every page */
+.cta-band{background:var(--ink);color:#fff;padding:3.5rem 1.5rem}
+.cta-band .in{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:1.5rem 3rem;align-items:center;justify-content:space-between}
+.cta-band h2{color:#fff;font-size:clamp(1.5rem,3vw,2.1rem);margin:0 0 .4rem}
+.cta-band p{color:#b9c6dd;max-width:46ch}
+.cta-band .row{display:flex;flex-wrap:wrap;gap:.8rem}
+.cta-band .btn-outline{color:#fff}
+footer{background:#07111f}
+/* mobile sticky call bar */
+.callbar{display:none}
+@media(max-width:700px){.callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:90;background:var(--ink);padding:.6rem;gap:.6rem}.callbar .btn{flex:1;padding:.8rem}body{padding-bottom:4.2rem}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
